@@ -30,9 +30,19 @@ jobs:
         cache-key: "1.18.x"
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
+      with:
+        args: >
+          -Dsonar.organization=kuoss
+          -Dsonar.projectKey=goproject1
+          -Dsonar.sources=.
+          -Dsonar.exclusions=**/*_test.go,**/vendor/**,**/testdata/*
+          -Dsonar.tests=.
+          -Dsonar.test.inclusions=**/*_test.go
+          -Dsonar.test.exclusions=**/vendor/**
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
     - uses: Jerome1337/gofmt-action@v1.0.5
       with:
         gofmt-path: '.'
