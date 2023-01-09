@@ -77,3 +77,9 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         path-to-lcov: coverage.lcov
+    - name: Coverage Gate
+      uses: VeryGoodOpenSource/very_good_coverage@v2
+      with:
+        path: coverage.lcov
+        min_coverage: 80
+        
