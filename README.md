@@ -2,4 +2,4 @@
 
 ![CI workflow](https://github.com/kuoss/goproject1/actions/workflows/ci.yml/badge.svg)
 
-[![Coverage Status](https://coveralls.io/repos/github/jandelgado/golang-ci-template-github-actions/badge.svg?branch=master)](https://coveralls.io/github/jandelgado/golang-ci-template-github-actions?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/kuoss/goproject1/badge.svg?branch=main)](https://coveralls.io/github/kuoss/goproject1?branch=main)
