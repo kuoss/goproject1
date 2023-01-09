@@ -37,9 +37,6 @@ jobs:
       with:
         gofmt-path: '.'
         gofmt-flags: '-l -d'
-    - name: Quality Gate
-      env:
-        COVERAGE_THRESHOLD: 0
 
   # https://docs.sonarcloud.io/advanced-setup/ci-based-analysis/github-actions-for-sonarcloud/
   sonarcloud:
