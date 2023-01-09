@@ -41,8 +41,8 @@ jobs:
         version: "2022.1.3"
         install-go: false
         cache-key: 1.18
-  govulncheck:
-    name: govulncheck
+  go-vulncheck:
+    name: go-vulncheck
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -50,7 +50,7 @@ jobs:
       with:
         fetch-depth: 1
     - name: Running govulncheck
-      uses: Templum/govulncheck-action@<version>
+      uses: Templum/govulncheck-action@v0.0.7
       with:
         go-version: 1.18
         vulncheck-version: latest
