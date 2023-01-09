@@ -51,6 +51,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    # https://github.com/marketplace/actions/sonarqube-quality-gate-check
     - name: SonarQube Quality Gate check
       uses: sonarsource/sonarqube-quality-gate-action@master
       # Force to fail step after specific time.
