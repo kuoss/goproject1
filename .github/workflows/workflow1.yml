@@ -8,15 +8,8 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  size-label:
-    runs-on: ubuntu-latest
-    steps:
-      - name: size-label
-        uses: pascalgn/size-label-action@v0.4.3
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-  vet:
-    name: Vet
+  go-vet:
+    name: go-vet
     runs-on: ubuntu-latest
     steps:
     - name: Setup go
@@ -30,8 +23,8 @@ jobs:
     - name: go vet
       run: |
         go vet ./...
-  staticcheck:
-    name: Staticcheck
+  go-staticcheck:
+    name: go-staticcheck
     runs-on: ubuntu-latest
     steps:
     - name: Setup go
@@ -48,8 +41,8 @@ jobs:
         version: "2022.1.3"
         install-go: false
         cache-key: 1.18
-  format:
-    name: Format
+  go-fmt:
+    name: go-fmt
     runs-on: ubuntu-latest
     steps:
     - name: Setup go
@@ -65,8 +58,8 @@ jobs:
       with:
         gofmt-path: '.'
         gofmt-flags: '-l -d'
-  test-with-coverage:
-    name: Test with coverage
+  go-test-with-coverage:
+    name: go-test-with-coverage
     runs-on: ubuntu-latest
     steps:
     - name: Setup go
