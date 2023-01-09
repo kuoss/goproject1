@@ -64,3 +64,5 @@ jobs:
         github_token: ${{ github.token }}
         branch: ${{ github.head_ref }}
         force: true
+        force_with_lease: true
+
