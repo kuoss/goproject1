@@ -72,14 +72,16 @@ jobs:
       run: go test -v -covermode=count -coverprofile=coverage.out
     - name: Convert coverage to lcov
       uses: jandelgado/gcov2lcov-action@v1
+      with:
+        outfile: ./coverage/lcov.info
     - name: Coveralls 
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: coverage.lcov
+        #path-to-lcov: coverage.lcov
     - name: Coverage Gate
       uses: VeryGoodOpenSource/very_good_coverage@v2
       with:
-        path: coverage.lcov
+        #path: coverage.lcov
         min_coverage: 80
         
