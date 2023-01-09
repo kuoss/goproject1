@@ -1,3 +1,3 @@
 # goproject1
 
-![Coverage](https://img.shields.io/badge/Coverage-100.0%25-brightgreen)
+![CI workflow](https://github.com/kuoss/goproject1/actions/workflows/ci.yml/badge.svg)
