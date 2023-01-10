@@ -4,7 +4,10 @@ jobs:
   size-label:
     runs-on: ubuntu-latest
     steps:
-      - name: size-label
-        uses: "pascalgn/size-label-action@v0.4.3"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+    - uses: srvaroa/labeler@master
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+    #- name: size-label
+    #  uses: "pascalgn/size-label-action@v0.4.3"
+    #  env:
+    #    GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
