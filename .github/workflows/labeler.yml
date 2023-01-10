@@ -1,14 +1,20 @@
-name: Add Size Label to PR
-# This workflow is triggered every time a PR is changed(opened/closed or code modifed).
-on:
-  pull_request
-
+name: size-label
+on: pull_request
 jobs:
-  build:
-    name: Add Size Label to PR
+  size-label:
     runs-on: ubuntu-latest
     steps:
-      - name: Add Size Label to PR
-        uses: WizardOhio24/label-pr-size-action@master
+      - name: size-label
+        uses: "pascalgn/size-label-action@v0.4.2"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          sizes: >
+            {
+              "0": "XS",
+              "20": "S",
+              "50": "M",
+              "200": "L",
+              "800": "XL",
+              "2000": "XXL"
+            }
