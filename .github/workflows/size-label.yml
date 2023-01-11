@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: size-label
-      uses: "jmnote/size-label-action@master"
+      uses: "jmnote/size-label-action@bugfix/403-forbidden"
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         DEBUG_ACTION: true
