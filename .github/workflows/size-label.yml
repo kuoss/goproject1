@@ -6,7 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: size-label
-      uses: "jmnote/size-label-action@v0.4.4-alpha1"
+      uses: "jmnote/size-label-action@v0.4.4-alpha2"
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-        DEBUG_ACTION: true
