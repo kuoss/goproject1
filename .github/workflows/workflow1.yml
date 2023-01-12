@@ -68,6 +68,7 @@ jobs:
       with:
         gofmt-path: '.'
         gofmt-flags: '-l -d'
+
   go-test-with-coverage:
     name: go-test-with-coverage
     runs-on: ubuntu-latest
