@@ -8,31 +8,30 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
+  go-license:
+    name: go-license
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 1
+    - uses: yusufpapurcu/go-license-checker@v0.5
   go-vet:
     name: go-vet
     runs-on: ubuntu-latest
     steps:
-    - name: Setup go
-      uses: actions/setup-go@v3
+    - uses: actions/setup-go@v3
       with:
         go-version: 1.18
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
       with:
         fetch-depth: 1
-    - name: go vet
-      run: |
-        go vet ./...
+    - run: go vet ./...
   go-staticcheck:
     name: go-staticcheck
     runs-on: ubuntu-latest
     steps:
-    - name: Setup go
-      uses: actions/setup-go@v3
-      with:
-        go-version: 1.18
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
       with:
         fetch-depth: 1
     - name: go staticcheck
@@ -45,12 +44,10 @@ jobs:
     name: go-vulncheck
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
       with:
         fetch-depth: 1
-    - name: Running govulncheck
-      uses: Templum/govulncheck-action@v0.0.7
+    - uses: Templum/govulncheck-action@v0.0.7
       with:
         go-version: 1.18
         vulncheck-version: latest
@@ -60,16 +57,10 @@ jobs:
     name: go-fmt
     runs-on: ubuntu-latest
     steps:
-    - name: Setup go
-      uses: actions/setup-go@v3
-      with:
-        go-version: 1.18
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
       with:
         fetch-depth: 1
-    - name: go fmt
-      uses: Jerome1337/gofmt-action@v1.0.5
+    - uses: Jerome1337/gofmt-action@v1.0.5
       with:
         gofmt-path: '.'
         gofmt-flags: '-l -d'
