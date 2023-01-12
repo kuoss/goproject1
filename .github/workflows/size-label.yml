@@ -1,6 +1,6 @@
 name: size-label
 on: pull_request
-permissions: read-all|write-all
+permissions: write-all
 jobs:
   size-label:
     runs-on: ubuntu-latest
