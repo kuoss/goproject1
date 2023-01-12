@@ -4,6 +4,7 @@ permissions: write-all
 jobs:
   size-label:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
     - name: size-label
       uses: "jmnote/size-label-action@master"
