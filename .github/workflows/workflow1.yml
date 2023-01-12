@@ -12,8 +12,14 @@ jobs:
     name: go-licenses
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: yusufpapurcu/go-license-checker@v0.5
+    - uses: actions/setup-go@v3
+      with:
+        go-version: 1.16
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 1
+    - run: go install github.com/google/go-licenses@latest
+    - run: go-licenses check .
   go-vet:
     name: go-vet
     runs-on: ubuntu-latest
