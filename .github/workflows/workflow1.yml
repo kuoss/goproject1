@@ -8,17 +8,12 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  go-license:
-    name: go-license
+  go-licenses:
+    name: go-licenses
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/setup-go@v3
-      with:
-        go-version: 1.18
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 1
-    - uses: yusufpapurcu/go-license-checker@v0.5
+      - uses: actions/checkout@v2
+      - uses: yusufpapurcu/go-license-checker@v0.5
   go-vet:
     name: go-vet
     runs-on: ubuntu-latest
