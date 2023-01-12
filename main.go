@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("hello v0.4.4-alpha3")
+	fmt.Println("hello master1")
 }
 
 // Add is our function that sums two integers
